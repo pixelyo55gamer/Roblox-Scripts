@@ -63,7 +63,7 @@ function CreateGui(settings)
     local Sidebar_Label = Instance.new("Frame", Sidebar)
     Sidebar_Label.Name = "Sidebar_Label"
     Sidebar_Label.Size = UDim2.new(1, 0, 0, 45)
-    Sidebar_Label.BorderSizePixel = 0
+    Sidebar_Label.BorderSizePixel = 5
     Sidebar_Label.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
     
     local Sidebar_Holder = Instance.new("Frame", Sidebar)
