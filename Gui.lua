@@ -113,7 +113,7 @@ function CreateGui(settings)
 
             local Sidebar_Label_Text2 = Instance.new("TextLabel", Sidebar_Label)
             Sidebar_Label_Text2.Name = "Sidebar_Label_Text2"
-            Sidebar_Label_Text2.Text = setting.GameMap or Info.Name
+            Sidebar_Label_Text2.Text = setting.GameMap or "Label"
             Sidebar_Label_Text2.Font = Enum.Font.GothamSemibold
             Sidebar_Label_Text2.TextSize = 15
             Sidebar_Label_Text2.TextWrapped = true
