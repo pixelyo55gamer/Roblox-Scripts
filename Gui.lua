@@ -2,6 +2,9 @@ local App = {}
 
 local LocalPlayer = game:GetService("Players").LocalPlayer
 
+local MarketplaceService = game:GetService("MarketplaceService")
+local Info = MarketplaceService:GetProductInfo(game.PlaceId)
+
 function dragify(obj)
 	local UIS = game:GetService("UserInputService")
 	local function dragify(Frame)
@@ -50,7 +53,7 @@ function CreateGui(settings)
     local MainFrame = Instance.new("Frame", Gui)
     MainFrame.Name = "MainFrame"
 	MainFrame.Size = UDim2.new(0, 550, 0, 425)
-    MainFrame.BorderSizePixel = 5
+    MainFrame.BorderSizePixel = 0
     MainFrame.AnchorPoint = Vector2.new(.5, .5)
     MainFrame.Position = UDim2.new(.5, 0, .5, 0)
     MainFrame.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
@@ -60,30 +63,129 @@ function CreateGui(settings)
     Sidebar.Size = UDim2.new(0, 140, 1, 0)
     Sidebar.BackgroundTransparency = 1
     
-    local Sidebar_Label = Instance.new("Frame", Sidebar)
-    Sidebar_Label.Name = "Sidebar_Label"
-    Sidebar_Label.Size = UDim2.new(1, 0, 0, 45)
-    Sidebar_Label.BorderSizePixel = 5
-    Sidebar_Label.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+    local Sidebar_Holder
+    local Sidebar_Label
     
-    local Sidebar_Holder = Instance.new("Frame", Sidebar)
-    Sidebar_Holder.Name = "Sidebar_Holder"
-    Sidebar_Holder.Size = UDim2.new(1, 0, 1, -45)
-    Sidebar_Holder.Position = UDim2.new(0, 0, 0, 45)
-    Sidebar_Holder.BorderSizePixel = 0
-    Sidebar_Holder.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
-    
-	local Sidebar_Label_Text = Instance.new("TextLabel", Sidebar_Label)
-    Sidebar_Label_Text.Name = "Sidebar_Label_Text"
-	Sidebar_Label_Text.Text = settings.Title or "Label"
-	Sidebar_Label_Text.Font = Enum.Font.GothamBold
-    Sidebar_Label_Text.TextSize = 15
-    Sidebar_Label_Text.TextColor3 = Color3.fromRGB(255, 255, 255)
-    Sidebar_Label_Text.Size = UDim2.new(1, 0, 1, 0)
-    Sidebar_Label_Text.BackgroundTransparency = 1
-    
-    local Sidebar_Holder_UIListLayout = Instance.new("UIListLayout", Sidebar_Holder)
-    Sidebar_Holder_UIListLayout.Name = "Sidebar_Holder_UIListLayout"
+    if settings.LabelDesign then
+        if settings.LabelDesign == 1 then
+           	local Sidebar_Label = Instance.new("Frame", Sidebar)
+            Sidebar_Label.Name = "Sidebar_Label"
+            Sidebar_Label.Size = UDim2.new(1, 0, 0, 80)
+            Sidebar_Label.BorderSizePixel = 0
+            Sidebar_Label.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+            
+            local Sidebar_Label_Text = Instance.new("TextLabel", Sidebar_Label)
+            Sidebar_Label_Text.Name = "Sidebar_Label_Text"
+            Sidebar_Label_Text.Text = settings.Title or "Label"
+            Sidebar_Label_Text.Font = Enum.Font.GothamBold
+            Sidebar_Label_Text.TextSize = 15
+            Sidebar_Label_Text.TextColor3 = Color3.fromRGB(255, 255, 255)
+            Sidebar_Label_Text.Size = UDim2.new(1, 0, 0, 45)
+            Sidebar_Label_Text.BackgroundTransparency = 1
+
+            local Sidebar_Holder = Instance.new("Frame", Sidebar)
+            Sidebar_Holder.Name = "Sidebar_Holder"
+            Sidebar_Holder.Size = UDim2.new(1, 0, 1, -45)
+            Sidebar_Holder.Position = UDim2.new(0, 0, 0, 45)
+            Sidebar_Holder.BorderSizePixel = 0
+            Sidebar_Holder.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+            
+            local Sidebar_Holder_UIListLayout = Instance.new("UIListLayout", Sidebar_Holder)
+   			Sidebar_Holder_UIListLayout.Name = "Sidebar_Holder_UIListLayout"
+        elseif settings.LabelDesign == 2 then
+            local Sidebar_Label = Instance.new("Frame", Sidebar)
+            Sidebar_Label.Name = "Sidebar_Label"
+            Sidebar_Label.Size = UDim2.new(1, 0, 0, 80)
+            Sidebar_Label.BorderSizePixel = 0
+            Sidebar_Label.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+            
+            local Sidebar_Label_Text = Instance.new("TextLabel", Sidebar_Label)
+            Sidebar_Label_Text.Name = "Sidebar_Label_Text"
+            Sidebar_Label_Text.Text = settings.Title or "Label"
+            Sidebar_Label_Text.Font = Enum.Font.GothamBold
+            Sidebar_Label_Text.TextSize = 17
+            Sidebar_Label_Text.TextXAlignment = Enum.TextXAlignment.Left
+            Sidebar_Label_Text.TextColor3 = Color3.fromRGB(255, 255, 255)
+            Sidebar_Label_Text.Size = UDim2.new(.8, 0, 0, 20)
+            Sidebar_Label_Text.Position = UDim2.new(.5, 0, 0, 20)
+            Sidebar_Label_Text.BackgroundTransparency = 1
+            Sidebar_Label_Text.AnchorPoint = Vector2.new(0.5, 0.5)
+
+            local Sidebar_Label_Text2 = Instance.new("TextLabel", Sidebar_Label)
+            Sidebar_Label_Text2.Name = "Sidebar_Label_Text2"
+            Sidebar_Label_Text2.Text = setting.GameMap or Info.Name
+            Sidebar_Label_Text2.Font = Enum.Font.GothamSemibold
+            Sidebar_Label_Text2.TextSize = 15
+            Sidebar_Label_Text2.TextWrapped = true
+            Sidebar_Label_Text2.TextXAlignment = Enum.TextXAlignment.Left
+            Sidebar_Label_Text2.TextColor3 = Color3.fromRGB(230, 230, 230)
+            Sidebar_Label_Text2.Size = UDim2.new(.8, 0, 0, 40)
+            Sidebar_Label_Text2.Position = UDim2.new(.5, 0, 0, 40)
+            Sidebar_Label_Text2.BackgroundTransparency = 1
+            Sidebar_Label_Text2.AnchorPoint = Vector2.new(0.5, 0.5)
+            Sidebar_Label_Text2.ClipsDescendants = false
+
+            local Sidebar_Holder = Instance.new("Frame", Sidebar)
+            Sidebar_Holder.Name = "Sidebar_Holder"
+            Sidebar_Holder.Size = UDim2.new(1, 0, 1, -80)
+            Sidebar_Holder.Position = UDim2.new(0, 0, 0, 80)
+            Sidebar_Holder.BorderSizePixel = 0
+            Sidebar_Holder.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+            
+            local Sidebar_Holder_UIListLayout = Instance.new("UIListLayout", Sidebar_Holder)
+   			Sidebar_Holder_UIListLayout.Name = "Sidebar_Holder_UIListLayout"
+		else
+            local Sidebar_Label = Instance.new("Frame", Sidebar)
+            Sidebar_Label.Name = "Sidebar_Label"
+            Sidebar_Label.Size = UDim2.new(1, 0, 0, 80)
+            Sidebar_Label.BorderSizePixel = 0
+            Sidebar_Label.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+
+            local Sidebar_Label_Text = Instance.new("TextLabel", Sidebar_Label)
+            Sidebar_Label_Text.Name = "Sidebar_Label_Text"
+            Sidebar_Label_Text.Text = settings.Title or "Label"
+            Sidebar_Label_Text.Font = Enum.Font.GothamBold
+            Sidebar_Label_Text.TextSize = 15
+            Sidebar_Label_Text.TextColor3 = Color3.fromRGB(255, 255, 255)
+            Sidebar_Label_Text.Size = UDim2.new(1, 0, 0, 45)
+            Sidebar_Label_Text.BackgroundTransparency = 1
+
+            local Sidebar_Holder = Instance.new("Frame", Sidebar)
+            Sidebar_Holder.Name = "Sidebar_Holder"
+            Sidebar_Holder.Size = UDim2.new(1, 0, 1, -45)
+            Sidebar_Holder.Position = UDim2.new(0, 0, 0, 45)
+            Sidebar_Holder.BorderSizePixel = 0
+            Sidebar_Holder.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+
+            local Sidebar_Holder_UIListLayout = Instance.new("UIListLayout", Sidebar_Holder)
+            Sidebar_Holder_UIListLayout.Name = "Sidebar_Holder_UIListLayout"
+		end
+	else
+		local Sidebar_Label = Instance.new("Frame", Sidebar)
+        Sidebar_Label.Name = "Sidebar_Label"
+        Sidebar_Label.Size = UDim2.new(1, 0, 0, 80)
+        Sidebar_Label.BorderSizePixel = 0
+        Sidebar_Label.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+            
+        local Sidebar_Label_Text = Instance.new("TextLabel", Sidebar_Label)
+        Sidebar_Label_Text.Name = "Sidebar_Label_Text"
+        Sidebar_Label_Text.Text = settings.Title or "Label"
+        Sidebar_Label_Text.Font = Enum.Font.GothamBold
+       	Sidebar_Label_Text.TextSize = 15
+       	Sidebar_Label_Text.TextColor3 = Color3.fromRGB(255, 255, 255)
+        Sidebar_Label_Text.Size = UDim2.new(1, 0, 0, 45)
+        Sidebar_Label_Text.BackgroundTransparency = 1
+
+        local Sidebar_Holder = Instance.new("Frame", Sidebar)
+        Sidebar_Holder.Name = "Sidebar_Holder"
+        Sidebar_Holder.Size = UDim2.new(1, 0, 1, -45)
+        Sidebar_Holder.Position = UDim2.new(0, 0, 0, 45)
+        Sidebar_Holder.BorderSizePixel = 0
+        Sidebar_Holder.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+            
+        local Sidebar_Holder_UIListLayout = Instance.new("UIListLayout", Sidebar_Holder)
+   		Sidebar_Holder_UIListLayout.Name = "Sidebar_Holder_UIListLayout"
+    end
     
     local Pages = Instance.new("Frame", MainFrame)
     Pages.Name = "Pages"
@@ -213,38 +315,48 @@ function App.Load(settings)
        	 	Holder_Holder_UIListLayout.Padding = UDim.new(0, 5)
             
             function Components.Button(settings, callback)
-                -- if callback then
-                    local Frame = Instance.new("Frame", Holder_Holder)
-                	
-                    Frame.Size = UDim2.new(1, 0, 0, 30)
-                    Frame.BackgroundTransparency = 1
+				local Frame = Instance.new("Frame", Holder_Holder)
+				Frame.Name = settings.Title or "Button"
+                Frame.Size = UDim2.new(1, 0, 0, 30)
+                Frame.BackgroundTransparency = 1
 
-                    local Label = Instance.new("TextLabel", Frame)
-                	Label.Name = "Label"
-                    Label.Text = settings.Title or "Section"
-                    Label.Size = UDim2.new(1, -10, 0, 30)
-                    Label.Position = UDim2.new(0, 10, 0, 0)
-                    Label.BackgroundTransparency = 1
-                    Label.TextSize = 14
-                    Label.Font = Enum.Font.GothamSemibold
-                    Label.TextXAlignment = Enum.TextXAlignment.Left
-                    Label.TextColor3 = Color3.fromRGB(255, 255, 255)
+                local Label = Instance.new("TextLabel", Frame)
+              	Label.Name = "Label"
+                Label.Text = settings.Title or "Button"
+                Label.Size = UDim2.new(1, -10, 0, 30)
+                Label.Position = UDim2.new(0, 10, 0, 0)
+                Label.BackgroundTransparency = 1
+                Label.TextSize = 14
+                Label.Font = Enum.Font.GothamSemibold
+                Label.TextXAlignment = Enum.TextXAlignment.Left
+                Label.TextColor3 = Color3.fromRGB(255, 255, 255)
 
-                    local Button = Instance.new("Frame", Frame)
-                	Button.Name = "Button"
-                    Button.Size = UDim2.new(0, 80, 1, 0)
-                    Button.Position = UDim2.new(1, 0, 0, 0)
-                    Button.AnchorPoint = Vector2.new(1, 0)
-                    Button.BorderSizePixel = 0
-                	Button.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+                local Button = Instance.new("Frame", Frame)
+              	Button.Name = "Button"
+                Button.Size = UDim2.new(0, 80, 1, 0)
+                Button.Position = UDim2.new(1, 0, 0, 0)
+                Button.AnchorPoint = Vector2.new(1, 0)
+               	Button.BorderSizePixel = 0
+                Button.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
                 
-                	local Button_Button = Instance.new("TextButton", Button)
-                	Button_Button.Text = ""
+                local Button_Button = Instance.new("TextButton", Button)
+                Button_Button.Name = "Button_Label"
+                Button_Button.Text = "Press me!"
+                Button_Button.Size = UDim2.new(1, 0, 1, 0)
+                Button_Button.BackgroundTransparency = 1
+                Button_Button.TextSize = 14
+                Button_Button.Font = Enum.Font.GothamBold
+                Button_Button.TextColor3 = Color3.fromRGB(80, 80, 80)
                     
-                	Holder.Size = UDim2.new(1, -10, 0, ((#Holder_Holder:GetChildren() - 1) * 40) - ((#Holder_Holder:GetChildren() - 2) * 5))
-                	Section.Size = UDim2.new(1, 0, 0, 35 + Holder.Size.Y.Offset)
-				end
-            -- end
+                Holder.Size = UDim2.new(1, -10, 0, ((#Holder_Holder:GetChildren() - 1) * 40) - ((#Holder_Holder:GetChildren() - 2) * 5))
+                Section.Size = UDim2.new(1, 0, 0, 35 + Holder.Size.Y.Offset)
+                
+                Button_Button.MouseButton1Click:Connect(function()
+                    if callback then
+                        callback(Gui)
+                    end    
+				end)
+			end
             
             return Components, Section
         end
