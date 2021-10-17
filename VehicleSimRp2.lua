@@ -25,7 +25,7 @@ game:GetService("ReplicatedStorage").DealershipSystem.purchase_item:InvokeServer
 while true do
    wait(1)
    if game.Players.LocalPlayer.Character.Humanoid.Died then
-    wait(10)
+    wait(15)
     local plr = game.Players.LocalPlayer
     plr.Character.HumanoidRootPart.CFrame = CFrame.new(6783.56592, 216.855057, -3679.55835)
     plr.Character.Humanoid.WalkToPoint = Vector3.new(6741.62, 217.655, -3656.6)
