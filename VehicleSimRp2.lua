@@ -22,9 +22,7 @@ local args = {
    [1] = 33
 }
 game:GetService("ReplicatedStorage").DealershipSystem.purchase_item:InvokeServer(unpack(args))
-while true do
-   wait(1)
-   if game.Players.LocalPlayer.Character.Humanoid.Died then
+if game.Players.LocalPlayer.Character.Humanoid.Died then
     wait(15)
     local plr = game.Players.LocalPlayer
     plr.Character.HumanoidRootPart.CFrame = CFrame.new(6783.56592, 216.855057, -3679.55835)
@@ -74,5 +72,4 @@ while true do
     plr.Character.HumanoidRootPart.CFrame = CFrame.new(-90.9882278, 129.781464, -3632.82935)
     wait(1)
     plr.Character.HumanoidRootPart.CFrame = CFrame.new(1536.59802, 128.526871, -4689.77539)
-   end
 end
