@@ -19,6 +19,12 @@ function noClip()
 end
 
 noClip()
+local INVpart = Instance.new("Part")
+INVPart.Parent = Workspace
+INVpart.Name = "Invisible part"
+INVpart.Size = (3, 3, 1)
+INVpart.Anchored = true
+INVpart.CFrame = CFrame.new(0, 255, 0)
 HRP.CFrame = CFrame.new(0, 256, 0)
 print("Waiting 3 Minutes")
 wait(180)
