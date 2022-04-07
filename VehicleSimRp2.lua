@@ -52,6 +52,7 @@ if game.Players.LocalPlayer.Character.Humanoid.Died then
     plr.Character.HumanoidRootPart.CFrame = CFrame.new(-241.262787, 225.179489, -1632.3479)
     end
     plr.Character.Humanoid.WalkToPoint = Vector3.new(-253.263733, 228.234619, -1671.28271)
+    wait(3)
     plr.Character.HumanoidRootPart.CFrame = CFrame.new(-253.263733, 228.234619, -1671.28271)
     wait(6)
     local foriv = {1,2,3,4,5,6,7,8,9,10}
