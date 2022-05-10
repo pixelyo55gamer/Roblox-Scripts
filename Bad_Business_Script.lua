@@ -167,7 +167,7 @@ runservice.Stepped:Connect(function()
         --chartable[localplayer]:WaitForChild("Root").Anchored = toggles.fly and flyvector == Vector3.new();
     end
 end)
-local library = loadstring(game:HttpGet("https://pastebin.com/raw/edJT9EGX"))();
+local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/pixelyo55gamer/script/main/UiLibforBS.lua"))();
 
 local aimbot = library:CreateWindow("Aimbot");
 local weapons = library:CreateWindow("Weapons");
