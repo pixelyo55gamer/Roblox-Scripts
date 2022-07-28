@@ -10,15 +10,6 @@ local Character = game:GetService("Players").LocalPlayer.Character
 local HRP = Character.HumanoidRootPart
 local Humanoid = Character.Humanoid
 
-function noClip()
-    game:GetService("RunService").Stepped:connect(
-        function()
-            Humanoid:ChangeState(11)
-        end
-    )
-end
-
-noClip()
 HRP.CFrame = CFrame.new(0, 256, 0)
 Character.Head.Anchored = true
 print("Waiting 3 Minutes")
