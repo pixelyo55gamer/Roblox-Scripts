@@ -1,6 +1,6 @@
-wait(10)
+wait(5)
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(Vector3.new(194.8333740234375, 9.139424324035645, -311.7455749511719))
-wait(3)
+wait(6)
 keypress(0x45)
 wait(0.5)
 keyrelease(0x45)
