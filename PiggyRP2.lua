@@ -72,7 +72,7 @@ local function knock()
 end
 
 local function doKey()
-    wait(1)
+    wait(3 / 4)
     for _, v in ipairs(workspace:GetChildren()) do
         if v:IsA("Folder") and v:FindFirstChildOfClass("Part") then
             local Child = v:FindFirstChildOfClass("Part")
@@ -98,11 +98,9 @@ local function doKey()
                 v.Parent.Parent.Name = "Door " .. tostring(DoorPart.BrickColor)
                 if v.Parent.Parent.Name == "Door " .. ItemColor then
                     HRP.CFrame = v.Parent.CFrame
-                    for i = 1, 7 do
-                        wait(1)
+                        wait(3/4)
                         fireclickdetector(v.Parent:FindFirstChildOfClass("ClickDetector"))
                     print("Opened " .. ItemColor .. " Door")
-                    end
                 end
             end
         end
@@ -110,18 +108,18 @@ local function doKey()
 end
 
 local function doMop()
-    wait(1)
+    wait(3 / 4)
     for _, v in pairs(workspace.Alleys:GetDescendants()) do
         if v:IsA("StringValue") and v.Value == "Mop" then
             HRP.CFrame = v.Parent.CFrame
-            wait(1)
+            wait(1 / 2)
             fireclickdetector(v.Parent:FindFirstChildOfClass("ClickDetector"))
         end
     end
 end
 
 local function doItem()
-    wait(1)
+    wait(3 / 4)
     for _, v in pairs(workspace.GameItems:GetChildren()) do
         if v.Mesh.TextureId == "http://www.roblox.com/asset/?id=36946043" then
             v.Name = "Mop"
@@ -141,7 +139,7 @@ local function doItem()
 end
 
 local function dice()
-    wait(1)
+    wait(3 / 4)
     for _, v in pairs(workspace.Alleys:GetDescendants()) do
         if v:IsA("Part") and v.BrickColor == BrickColor.new(DiceColor) and v:FindFirstChildOfClass("SpecialMesh") then
             if v:FindFirstChildOfClass("SpecialMesh").MeshId == "http://www.roblox.com/asset/?id=1529453" then
@@ -201,7 +199,7 @@ local function doPuzzle2()
             if v:isA("ClickDetector") and v.Parent.Parent.Parent.Name == "TorchEvent" then
                 HRP.CFrame = v.Parent.CFrame
                 for i = 1, 7 do
-                    wait(1)
+                    wait(1 / 10)
                     fireclickdetector(v)
                 end
                 print("Cleared Torch")
