@@ -16,7 +16,7 @@ elseif game.PlaceId == 734159876 then --Sharkbite
 elseif game.PlaceId == 3233893879 then --Bad Business
     --https://www.roblox.com/games/3233893879?privateServerLinkCode=89961620027418803451997891122909
         repeat wait() until game:IsLoaded()
-        wait(15)
+        wait(25)
         for i,v in pairs(game:GetService("Workspace").NonGeometry:GetDescendants()) do
             if v:IsA("SurfaceGui") then
             local esp = Instance.new("BoxHandleAdornment")
