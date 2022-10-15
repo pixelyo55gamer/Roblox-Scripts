@@ -2,8 +2,8 @@ local plr = game:GetService("Players").LocalPlayer
 if game.PlaceId == 5967514178 then --Ready Player 2
     repeat wait() until game:IsLoaded()
     wait(5)
-    plr.Character.Humanoid.WalkSpeed = 64
     game:GetService("Players").LocalPlayer.Character.Humanoid.WalkSpeed = 64
+    plr.Character.Humanoid.WalkSpeed = 64
 elseif game.PlaceId == 5661005779 then --Piggy Book 2
     --https://www.roblox.com/games/4623386862?privateServerLinkCode=43881783873356048913116130569902
     repeat wait() until game:IsLoaded()
