@@ -7,7 +7,7 @@ if game.PlaceId == 5967514178 then --Ready Player 2
 elseif game.PlaceId == 5661005779 then --Piggy Book 2
     --https://www.roblox.com/games/4623386862?privateServerLinkCode=43881783873356048913116130569902
     repeat wait() until game:IsLoaded()
-    wait(60)
+    wait(50)
     loadstring(game:HttpGet("https://raw.githubusercontent.com/CMD-X/CMD-X/master/Source", true))()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/pixelyo55gamer/Roblox-Scripts/main/PiggyRP2.lua", true))()
 elseif game.PlaceId == 734159876 then --Sharkbite
