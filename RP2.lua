@@ -12,19 +12,6 @@ elseif game.PlaceId == 5661005779 then --Piggy Book 2
     loadstring(game:HttpGet("https://raw.githubusercontent.com/pixelyo55gamer/Roblox-Scripts/main/PiggyRP2.lua", true))()
 elseif game.PlaceId == 734159876 then --Sharkbite
     --https://www.roblox.com/games/734159876?privateServerLinkCode=14794222261867326163537089403627
-    for i,v in pairs(game:GetService("Workspace").SonarBuoys.Buoys:GetDescendants()) do
-        if v:IsA("MeshPart") then
-        local esp = Instance.new("BoxHandleAdornment")
-        esp.Parent = v
-        esp.Name = "Buoy"
-        esp.Adornee = v
-        esp.AlwaysOnTop = true
-        esp.ZIndex = 0
-        esp.Size = v.Size
-        esp.Transparency = 0.3
-        esp.Color = BrickColor.new("Persimmon")
-        end
-    end
     loadstring(game:HttpGet("https://raw.githubusercontent.com/CMD-X/CMD-X/master/Source", true))()
 elseif game.PlaceId == 3233893879 then --Bad Business
     --https://www.roblox.com/games/3233893879?privateServerLinkCode=89961620027418803451997891122909
