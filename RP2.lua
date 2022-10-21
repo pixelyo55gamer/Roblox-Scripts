@@ -1,4 +1,5 @@
 local plr = game:GetService("Players").LocalPlayer
+repeat wait() until game:IsLoaded()
 if game.PlaceId == 5967514178 then --Ready Player 2
     repeat wait() until game:IsLoaded()
     wait(5)
