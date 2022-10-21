@@ -17,7 +17,7 @@ wait(180)
 Character.Head.Anchored = false
 
 local function knock()
-    wait(3 / 4)
+    wait(1)
     for _, v in pairs(workspace.Alleys:GetDescendants()) do
         if v:IsA("ClickDetector") and v.Parent:FindFirstChildOfClass("Sound") then
             local SFX = v.Parent:FindFirstChildOfClass("Sound")
@@ -139,7 +139,7 @@ local function doItem()
 end
 
 local function dice()
-    wait(3 / 4)
+    wait(1)
     for _, v in pairs(workspace.Alleys:GetDescendants()) do
         if v:IsA("Part") and v.BrickColor == BrickColor.new(DiceColor) and v:FindFirstChildOfClass("SpecialMesh") then
             if v:FindFirstChildOfClass("SpecialMesh").MeshId == "http://www.roblox.com/asset/?id=1529453" then
