@@ -72,7 +72,7 @@ local function knock()
 end
 
 local function doKey()
-    wait(3 / 4)
+    wait(1)
     for _, v in ipairs(workspace:GetChildren()) do
         if v:IsA("Folder") and v:FindFirstChildOfClass("Part") then
             local Child = v:FindFirstChildOfClass("Part")
@@ -108,7 +108,7 @@ local function doKey()
 end
 
 local function doMop()
-    wait(3 / 4)
+    wait(1)
     for _, v in pairs(workspace.Alleys:GetDescendants()) do
         if v:IsA("StringValue") and v.Value == "Mop" then
             HRP.CFrame = v.Parent.CFrame
@@ -119,7 +119,7 @@ local function doMop()
 end
 
 local function doItem()
-    wait(3 / 4)
+    wait(1)
     for _, v in pairs(workspace.GameItems:GetChildren()) do
         if v.Mesh.TextureId == "http://www.roblox.com/asset/?id=36946043" then
             v.Name = "Mop"
