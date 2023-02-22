@@ -32,6 +32,7 @@ local function knock()
                             end
                         end
                     )
+                    wait(0.5)
                     fireclickdetector(v)
                     HRP.CFrame = CFrame.new(dX, dY + 10, dZ)
                     wait(6.5)
@@ -44,6 +45,7 @@ local function knock()
                             end
                         end
                     )
+                    wait(0.5)
                     fireclickdetector(v)
                     HRP.CFrame = CFrame.new(dX, dY + 10, dZ)
                     wait(6.5)
@@ -56,6 +58,7 @@ local function knock()
                             end
                         end
                     )
+                    wait(0.5)
                     fireclickdetector(v)
                     HRP.CFrame = CFrame.new(dX, dY + 10, dZ)
                     wait(6.5)
