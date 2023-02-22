@@ -39,38 +39,38 @@ game:GetService("ReplicatedStorage").Events.ClaimHive:FireServer(unpack(args))
 local args = {
     [1] = "WordFactory "
 }
-
+wait(0.5)
 game:GetService("ReplicatedStorage").Events.PromoCodeEvent:FireServer(unpack(args))
 
 local args = {
     [1] = "Millie "
 }
-
+wait(0.5)
 game:GetService("ReplicatedStorage").Events.PromoCodeEvent:FireServer(unpack(args))
 local args = {
     [1] = "Troggles "
 }
-
+wait(0.5)
 game:GetService("ReplicatedStorage").Events.PromoCodeEvent:FireServer(unpack(args))
 local args = {
     [1] = "Luther "
 }
-
+wait(0.5)
 game:GetService("ReplicatedStorage").Events.PromoCodeEvent:FireServer(unpack(args))
 local args = {
     [1] = "CarmensAnDiego "
 }
-
+wait(0.5)
 game:GetService("ReplicatedStorage").Events.PromoCodeEvent:FireServer(unpack(args))
 local args = {
     [1] = "Dysentery "
 }
-
+wait(0.5)
 game:GetService("ReplicatedStorage").Events.PromoCodeEvent:FireServer(unpack(args))
 local args = {
     [1] = "Jumpstart "
 }
-
+wait(0.5)
 game:GetService("ReplicatedStorage").Events.PromoCodeEvent:FireServer(unpack(args))
 plr.Character.HumanoidRootPart.CFrame = CFrame.new(-378.00885, 18.0686474, 332.561951)
 wait(1)
